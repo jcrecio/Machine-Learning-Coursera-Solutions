@@ -49,7 +49,9 @@ matrix_y = zeros(m, num_labels);
 for i=1:m
     matrix_y(i, :) = I(y(i), :);
 end
-J = (1/m)*sum(sum(-matrix_y.*log(H) - (1 - matrix_y).*log(1 - H)));
+
+regularization = (lambda)/(2*m) * (sum(sum(Theta1(:, 2:end).^2)) + sum(sum(Theta2(:, 2:end).^2)));
+J = (1/m)*sum(sum(-matrix_y.*log(H) - (1 - matrix_y).*log(1 - H))) + regularization;
 
 
 % Part 2: Implement the backpropagation algorithm to compute the gradients
