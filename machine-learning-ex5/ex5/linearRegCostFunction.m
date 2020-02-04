@@ -26,6 +26,10 @@ reg = lambda * sum(theta(2: size(theta, 1)).^2);
 total = sqrt + reg;
 J = total * (1/(2*m));
 
+grad = (X'*error)./m;
+grad(2:length(grad)) = grad(2:length(grad)) + (lambda/m) * theta(2:length(theta));
+
+
 
 
 % =========================================================================
