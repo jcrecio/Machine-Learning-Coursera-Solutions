@@ -39,8 +39,9 @@ plot(X, y, 'rx', 'MarkerSize', 10, 'LineWidth', 1.5);
 xlabel('Change in water level (x)');
 ylabel('Water flowing out of the dam (y)');
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+fprintf('Program d. Press enter to continue.\n');
+;
+;
 
 %% =========== Part 2: Regularized Linear Regression Cost =============
 %  You should now implement the cost function for regularized linear 
@@ -53,10 +54,8 @@ J = linearRegCostFunction([ones(m, 1) X], y, theta, 1);
 fprintf(['Cost at theta = [1 ; 1]: %f '...
          '\n(this value should be about 303.993192)\n'], J);
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
-kbhit;
-
+fprintf('Program d. Press enter to continue.\n');
+;
 
 %% =========== Part 3: Regularized Linear Regression Gradient =============
 %  You should now implement the gradient for regularized linear 
@@ -70,8 +69,8 @@ fprintf(['Gradient at theta = [1 ; 1]:  [%f; %f] '...
          '\n(this value should be about [-15.303016; 598.250744])\n'], ...
          grad(1), grad(2));
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+fprintf('Program d. Press enter to continue.\n');
+;
 
 
 %% =========== Part 4: Train Linear Regression =============
@@ -95,8 +94,10 @@ hold on;
 plot(X, [ones(m, 1) X]*theta, '--', 'LineWidth', 2)
 hold off;
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+fprintf('Program d. Press enter to continue.\n');
+;
+;
+
 
 
 %% =========== Part 5: Learning Curve for Linear Regression =============
@@ -106,7 +107,7 @@ pause;
 %                 see a graph with "high bias" -- Figure 3 in ex5.pdf 
 %
 
-lambda = 0;
+lambda = 100;
 [error_train, error_val] = ...
     learningCurve([ones(m, 1) X], y, ...
                   [ones(size(Xval, 1), 1) Xval], yval, ...
@@ -124,8 +125,10 @@ for i = 1:m
     fprintf('  \t%d\t\t%f\t%f\n', i, error_train(i), error_val(i));
 end
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+fprintf('Program d. Press enter to continue.\n');
+;
+;
+
 
 %% =========== Part 6: Feature Mapping for Polynomial Regression =============
 %  One solution to this is to use polynomial regression. You should now
@@ -154,8 +157,9 @@ X_poly_val = [ones(size(X_poly_val, 1), 1), X_poly_val];           % Add Ones
 fprintf('Normalized Training Example 1:\n');
 fprintf('  %f  \n', X_poly(1, :));
 
-fprintf('\nProgram paused. Press enter to continue.\n');
-pause;
+fprintf('\nProgram d. Press enter to continue.\n');
+;
+;
 
 
 
@@ -194,8 +198,9 @@ for i = 1:m
     fprintf('  \t%d\t\t%f\t%f\n', i, error_train(i), error_val(i));
 end
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+fprintf('Program d. Press enter to continue.\n');
+;
+;
 
 %% =========== Part 8: Validation for Selecting Lambda =============
 %  You will now implement validationCurve to test various values of 
@@ -218,5 +223,5 @@ for i = 1:length(lambda_vec)
             lambda_vec(i), error_train(i), error_val(i));
 end
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+fprintf('Program d. Press enter to continue.\n');
+;
